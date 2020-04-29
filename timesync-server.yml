@@ -1,0 +1,35 @@
+---
+- hosts: { target_hosts }
+  vars:
+    timesync_ntp_servers:
+      - hostname: { target_ntp_server }
+        iburst: yes
+      #- hostname: 0.pool.ntp.org
+      #  iburst: yes
+      #- hostname: 1.pool.ntp.org
+      #iburst: yes
+      #- hostname: 2.pool.ntp.org
+      #iburst: yes
+      #- hostname: 3.pool.ntp.org
+      #iburst: yes
+  roles:
+    - rhel-system-roles.timesync
+  tasks:
+    - name: allow ntp clients (chrony)
+      lineinfile: 
+        path: /etc/chrony.conf
+        line: 'allow { target_network }'
+        state: present
+    - name: restart chrony
+      service: 
+        name: chronyd
+        state: restarted
+    - name: allow ntp clients (firewall)
+      firewalld: 
+        service: ntp
+        permanent: true
+        state: enabled
+    - name: restart firewalld
+      service: 
+        name: firewalld
+        state: reloaded

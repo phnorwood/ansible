@@ -1,0 +1,8 @@
+---
+- name: install rhel system roles
+  hosts: localhost
+  tasks: 
+    - name: install rhel system roles
+      yum: 
+        name: rhel-system-roles
+        state: installed
