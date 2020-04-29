@@ -1,5 +1,6 @@
 ---
 - hosts: { target_hosts }
+  become: true
   vars:
     timesync_ntp_servers:
       - hostname: { target_ntp_server }

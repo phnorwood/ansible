@@ -1,6 +1,7 @@
 ---
 - name: install rhel system roles
   hosts: localhost
+  become: true
   tasks: 
     - name: install rhel system roles
       yum: 
