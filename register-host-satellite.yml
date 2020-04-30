@@ -10,9 +10,9 @@
         state: present
         validate_certs: false
         disable_gpg_check: true
-        force_register: true
     - name: subscription register (satellite)
       redhat_subscription:
         state: present
         activationkey: "{{ rhsm_activationkey }}"
         org_id: "{{ rhsm_org_id }}"
+        force_register: true
