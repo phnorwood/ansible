@@ -6,7 +6,7 @@
   tasks: 
     - name: install katello-ca-consumer
       yum:
-        name: "http://{{ satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
+        name: "https://{{ satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
         state: present
         validate_certs: no
         disable_gpg_check: yes
