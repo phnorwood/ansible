@@ -1,6 +1,6 @@
 ---
 - name: install rhel system roles
-  hosts: localhost
+  hosts: "{{ target_hosts }}"
   become: true
   tasks: 
     - name: install rhel system roles
