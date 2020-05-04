@@ -1,0 +1,10 @@
+---
+- name: install + register red hat insights
+  hosts: {{ target_hosts }}
+  tasks: 
+    - name: yum install insights-client
+      yum: 
+        name: insights-client
+        state: latest
+    - name: register via insights-client utility
+      command: insights-client --register
