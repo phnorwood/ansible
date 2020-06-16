@@ -1,0 +1,23 @@
+---
+- name: enable remote ansible user (including creation, password, ssh-key)
+  hosts: all
+  vars_files: remote-user-info.yml
+  tasks: 
+    - name: create remote user 
+      user: 
+        name: "{{ ansible_user_name }}"
+        comment: Ansible SSH Machine User
+        group: wheel
+        password: "{{ ansible_user_password | password_hash('sha512') }}"
+    - name: copy remote user rsa public key
+      authorized_key:
+        user: "{{ ansible_user_name }}"
+        state: present
+        key: "{{ lookup('file', '{{ ansible_user_key }}') }}"
+    - name: configure 'wheel' group for no password sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
