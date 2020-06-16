@@ -13,7 +13,7 @@
       authorized_key:
         user: "{{ ansible_user_name }}"
         state: present
-        key: "{{ lookup('file', '{{ ansible_user_key }}') }}"
+        key: "{{ lookup('file', '/home/{{ ansible_user_name }}/.ssh/id_rsa.pub') }}"
     - name: configure 'wheel' group for no password sudo
       lineinfile:
         dest: /etc/sudoers

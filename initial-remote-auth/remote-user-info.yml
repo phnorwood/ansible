@@ -1,3 +1,2 @@
 ansible_user_name: user-changeme
 ansible_user_password: password-changeme
-ansible_user_key: /home/user-changeme/.ssh/id_rsa.pub
