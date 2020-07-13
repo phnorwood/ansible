@@ -14,8 +14,6 @@
         path: "/home/{{ ansible_user_name }}/.ssh/"
         state: directory
         mode: '0700'
-        owner: "{{ ansible_user_name }}"
-        group: "{{ ansible_user_name }}"
     - name: copy remote user rsa public key
       authorized_key:
         user: "{{ ansible_user_name }}"
