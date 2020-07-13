@@ -1,0 +1,11 @@
+$TTL 1D
+@       IN SOA  dns.bogwood.org. root.bogwood.org. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+@       IN      NS      dns.bogwood.org.
+3	IN	PTR	rhv-01.bogwood.org.
+4	IN	PTR	rhv.bogwood.org.
+7	IN	PTR	rhv-02.bogwood.org.

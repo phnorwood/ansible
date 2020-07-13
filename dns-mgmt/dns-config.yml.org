@@ -1,6 +1,0 @@
-dns_host: proxy.bogwood.org
-dns_packages: 
-- bind
-- bind-utils
-dns_search: search bogwood.org
-dns_nameserver: nameserver 10.0.0.1
