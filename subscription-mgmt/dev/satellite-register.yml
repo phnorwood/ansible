@@ -1,0 +1,18 @@
+---
+- name: register host (red hat subscription manager)
+  become: true
+  hosts: "{{ target_hosts }}"
+  vars: 
+  tasks: 
+    - name: install katello-ca-consumer
+      yum:
+        name: "https://{{ satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
+        state: present
+        validate_certs: false
+        disable_gpg_check: true
+    - name: subscription register (satellite)
+      redhat_subscription:
+        state: present
+        activationkey: '"{{ rhsm_activationkey }}"'
+        org_id: '"{{ rhsm_org_id }}"'
+        force_register: true

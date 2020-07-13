@@ -1,0 +1,11 @@
+---
+- name: subscribe content host (cdn.redhat.com)
+  hosts: "{{ target_hosts }}"
+  vars_files: cred-info.yml
+  tasks: 
+    - name: subscription-manager register --auto-attach
+      redhat_subscription:
+        state: present
+        username: "{{ rhn_user_name }}"
+        password: "{{ rhn_user_password }}"
+        auto_attach: true
