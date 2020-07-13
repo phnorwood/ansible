@@ -1,15 +1,13 @@
 ---
 - name: install bind dns requirements
   hosts: "{{ target_host }}"
-  include: dns-config.yml
+  vars_files: dns-config.yml
   tasks:
-
     - name: install bind
       yum: 
         name: "{{ item }}"
         state: latest
       with_items: "{{ dns_packages }}"
-
     - name: configure firewall
       firewalld: 
         service: dns
@@ -17,13 +15,11 @@
         permanent: true
         zone: public
       notify: restart_firewalld
-
     - name: enable named
       service: 
         name: named
         enabled: true
         state: started
-
   handlers:
     - name: restart_firewalld
       service:
