@@ -1,6 +1,7 @@
 ---
 - name: subscribe content host (cdn.redhat.com)
   hosts: "{{ target_hosts }}"
+  become: true
   vars_files: cred-info.yml
   tasks: 
     - name: subscription-manager register --auto-attach
