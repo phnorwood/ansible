@@ -1,6 +1,6 @@
 ---
 - name: install bind dns requirements
-  hosts: "{{ dns_host }}"
+  hosts: "{{ target_host }}"
   include: dns-config.yml
   tasks:
 
