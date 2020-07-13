@@ -6,9 +6,8 @@
   tasks:
     - name: install bind
       yum: 
-        name: "{{ item }}"
+        name: "{{ dns_packages }}"
         state: latest
-      with_items: "{{ dns_packages }}"
     - name: configure firewall
       firewalld: 
         service: dns
