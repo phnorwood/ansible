@@ -2,7 +2,7 @@
 - name: install bind dns requirements
   hosts: "{{ target_host }}"
   become: true
-  vars_files: dns-config.yml
+  vars_files: vars/dns-config.yml
   tasks:
     - name: install bind
       yum: 
