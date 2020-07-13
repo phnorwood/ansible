@@ -1,6 +1,0 @@
-rhn_user_name: panorwoo
-rhn_user_password: Life is a li3.
-satellite_url: satellite.bogwood.org
-satellite_cert_url: /pub/katello-ca-consumer-latest.noarch.rpm
-satellite_act_key: rhel-8-key
-satellite_org_id: Default_Organization
