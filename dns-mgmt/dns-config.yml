@@ -1,0 +1,4 @@
+dns_host: proxy.bogwood.org
+dns_packages: 
+- bind
+- bind-utils
