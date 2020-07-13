@@ -1,6 +1,6 @@
 ---
 - name: subscribe content host (cdn.redhat.com)
-  hosts: "{{ target_hosts }}"
+  hosts: "{{ target_host }}"
   become: true
   vars_files: subscribe-info.yml
   tasks: 
