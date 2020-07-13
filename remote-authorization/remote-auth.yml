@@ -1,6 +1,6 @@
 ---
 - name: enable remote ansible user (including creation, password, ssh-key)
-  hosts: all
+  hosts: "{{ target_host }}"
   vars_files: remote-user-info.yml
   tasks: 
     - name: create remote user 
