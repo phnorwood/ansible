@@ -9,6 +9,13 @@
         comment: Ansible SSH Machine User
         group: wheel
         password: "{{ ansible_user_password | password_hash('sha512') }}"
+    - name: validate and/or create .ssh directory
+      file:
+        path: "/home/{{ ansible_user_name }}/.ssh/"
+        state: directory
+        mode: '0700'
+        owner: "{{ ansible_user_name }}"
+        group: "{{ ansible_user_name }}"
     - name: copy remote user rsa public key
       authorized_key:
         user: "{{ ansible_user_name }}"
