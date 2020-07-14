@@ -14,7 +14,7 @@
         backup: true
     - name: configure forward-zone
       template: 
-        src: "vars/{{ dns_forward_zone_file }}"
+        src: "vars/forward-zone.j2"
         dest: "/var/named/{{ dns_forward_zone_file }}"
         owner: root
         group: named
@@ -22,7 +22,7 @@
         backup: true
     - name: configure reverse-zone
       template:
-        src: "vars/{{ dns_reverse_zone_file }}"
+        src: "vars/reverse-zone.j2"
         dest: "/var/named/{{ dns_reverse_zone_file }}"
         owner: root
         group: named
