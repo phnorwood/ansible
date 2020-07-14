@@ -11,9 +11,7 @@
         owner: root
         group: root
         mode: '0644'
-      notify: restart_nginx
-  handlers:
-    - name: restart_nginx
+    - name: restart nginx
       service:
         name: "{{ nginx_service }}"
         state: restarted
