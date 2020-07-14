@@ -1,6 +1,8 @@
 dns_packages: 
 - bind
 - bind-utils
+dns_ipv4_interface: 10.0.0.5
+dns_cidr: 10.0.0.0/24
 dns_forward_zone: "bogwood.org"
 dns_forward_zone_file: "forward.bogwood.org"
 dns_reverse_zone: "0.0.10.in-addr.arpa"
