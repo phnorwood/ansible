@@ -12,3 +12,23 @@
         group: named
         mode: 640
         backup: true
+    - name: configure forward-zone
+      template: 
+        src: "vars/{{ dns_forward_zone_file }}"
+        dest: "/var/named/{{ dns_forward_zone_file }}"
+        owner: root
+        group: named
+        mode: 640
+        backup: true
+    - name: configure reverse-zone
+      template:
+        src: "vars/{{ dns_reverse_zone_file }}"
+        dest: "/var/named/{{ dns_reverse_zone_file }}"
+        owner: root
+        group: named
+        mode: 640
+        backup: true
+    - name: restart named
+      service:
+        name: named
+        state: restarted
