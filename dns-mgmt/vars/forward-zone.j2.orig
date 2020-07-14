@@ -1,0 +1,11 @@
+$TTL 1D
+@	IN SOA	proxy.bogwood.org. root.bogwood.org. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+@		IN	NS	proxy.bogwood.org.
+rhv-01		IN	A	10.0.0.3
+rhv		IN	A	10.0.0.4
+rhv-02		IN	A	10.0.0.7
