@@ -1,0 +1,27 @@
+---
+- name: install nginx proxy requirements
+  hosts: "{{ target_host }}"
+  become: true
+  vars_files: vars/nginx-config.yml
+  tasks:
+    - name: install nginx
+      yum: 
+        name: "{{ nginx_packages }}"
+        state: latest
+    - name: configure firewall
+      firewalld: 
+        service: http
+        state: enabled
+        permanent: true
+        zone: public
+      notify: restart_firewalld
+    - name: enable named
+      service: 
+        name: named
+        enabled: true
+        state: started
+  handlers:
+    - name: restart_firewalld
+      service:
+        name: firewalld
+        state: restarted
