@@ -10,14 +10,14 @@
         state: latest
     - name: configure firewall
       firewalld: 
-        service: http
+        service: "{{ firewall_service }}"
         state: enabled
         permanent: true
         zone: public
       notify: restart_firewalld
-    - name: enable named
+    - name: enable nginx
       service: 
-        name: named
+        name: "{{ nginx_service }}"
         enabled: true
         state: started
   handlers:
