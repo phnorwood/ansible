@@ -62,14 +62,14 @@ zone "." IN {
 
 zone "{{ dns_forward_zone }}" IN {
 	type master;
-	file "{{ dns_forward_zone_file }}";
+	file {{ dns_forward_zone_file }};
 	allow-update { none; };
 	allow-query { any; };
 };
 
 zone "{{ dns_reverse_zone }}" IN {
         type master;
-        file "{{ dns_reverse_zone_file }}";
+        file {{ dns_reverse_zone_file }};
         allow-update { none; };
         allow-query { any; };
 };
