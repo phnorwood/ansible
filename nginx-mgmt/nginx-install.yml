@@ -10,7 +10,7 @@
         state: latest
     - name: configure firewall
       firewalld: 
-        service: "{{ firewall_services }}"
+        service: "{{ nginx_firewall_services }}"
         state: enabled
         permanent: true
         zone: public
