@@ -1,3 +1,4 @@
+# {{ ansible_managed }}
 //
 // named.conf
 //
@@ -8,7 +9,7 @@
 //
 
 options {
-	listen-on port 53 { 127.0.0.1; 10.0.0.5; };
+	listen-on port 53 { 127.0.0.1; "{{ hostvars[host]['ansible_eth0']['ipv4']['address'] }}"; };
 	#listen-on-v6 port 53 { ::1; };
 	directory 	"/var/named";
 	dump-file 	"/var/named/data/cache_dump.db";
@@ -16,7 +17,7 @@ options {
 	memstatistics-file "/var/named/data/named_mem_stats.txt";
 	secroots-file	"/var/named/data/named.secroots";
 	recursing-file	"/var/named/data/named.recursing";
-	allow-query     { localhost; 10.0.0.0/24; };
+	allow-query     { localhost; "{{ ansible_default_ipv4.address }}/{{ansible_default_ipv4.netmask }}"; };
 
 	/* 
 	 - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
@@ -54,16 +55,16 @@ zone "." IN {
 	file "named.ca";
 };
 
-zone "bogwood.org" IN {
+zone "{{ dns_forward_zone }}" IN {
 	type master;
-	file "forward.bogwood.org";
+	file "{{ dns_forward_zone_file }}";
 	allow-update { none; };
 	allow-query { any; };
 };
 
-zone "0.0.10.in-addr.arpa" IN {
+zone "{{ dns_reverse_zone }}" IN {
         type master;
-        file "reverse.bogwood.org";
+        file "{{ dns_reverse_zone_file }}";
         allow-update { none; };
         allow-query { any; };
 };
