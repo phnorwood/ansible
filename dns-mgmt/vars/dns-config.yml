@@ -1,6 +1,7 @@
 dns_packages: 
 - bind
 - bind-utils
+dns_service: dns
 dns_ipv4_interface: 10.0.0.5
 dns_reverse_octet: 5
 dns_cidr: 10.0.0.0/24
