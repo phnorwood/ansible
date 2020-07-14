@@ -1,11 +1,11 @@
 $TTL 1D
-@       IN SOA  "{{ dns_hostname }}.{{ dns_suffix }}. root.{{ dns_suffix }}." (
+@       IN SOA  {{ dns_hostname }}.{{ dns_suffix }}. root.{{ dns_suffix }}. (
                                         0       ; serial
                                         1D      ; refresh
                                         1H      ; retry
                                         1W      ; expire
                                         3H )    ; minimum
-@       IN      NS      "{{ dns_hostname }}.{{ dns_suffix }}."
+@       IN      NS      {{ dns_hostname }}.{{ dns_suffix }}.
 4	IN	PTR	rhv.bogwood.
 3	IN	PTR	rhv-01.bogwood.org.
 7	IN	PTR	rhv-02.bogwood.org.
