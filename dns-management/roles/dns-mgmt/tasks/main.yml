@@ -23,21 +23,21 @@
 # configure dns (bind zones)
 - name: configure /etc/named.conf
   template: 
-    src: vars/named.j2
+    src: named.j2
     dest: /etc/named.conf
     owner: root
     group: named
     mode: '0640'
 - name: configure forward-zone
   template: 
-    src: "vars/forward-zone.j2"
+    src: forward-zone.j2
     dest: "/var/named/{{ dns_forward_zone_file }}"
     owner: root
     group: named
     mode: '0640'
 - name: configure reverse-zone
   template:
-    src: "vars/reverse-zone.j2"
+    src: reverse-zone.j2
     dest: "/var/named/{{ dns_reverse_zone_file }}"
     owner: root
     group: named
