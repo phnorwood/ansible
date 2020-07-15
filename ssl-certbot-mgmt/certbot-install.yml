@@ -16,5 +16,8 @@
       git: 
         repo: "{{ certbot_git_repo }}"
         dest: "{{ certbot_path }}"
+    - name: execute /opt/certbot/letsencrypt (generate wildcard)
+      command: "{{ certbot_letsencrypt }}"
+      register: letsencrypt_result
     - debug:
-        var: "{{ certbot_letsencrypt }}"
+        var: letsencrypt_result
