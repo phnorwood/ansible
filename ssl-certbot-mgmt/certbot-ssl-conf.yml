@@ -1,0 +1,22 @@
+---
+- name: install nginx proxy requirements
+  hosts: "{{ target_host }}"
+  become: true
+  vars_files: vars/nginx-config.yml
+  tasks:
+    - name: configure nginx.conf
+      template:
+        src: "vars/nginx.conf.j2"
+        dest: "/etc/nginx/nginx.conf"
+        owner: root
+        group: root
+        mode: '0644'
+    - name: restart nginx
+      service:
+        name: "{{ nginx_service }}"
+        state: restarted
+    - name: set http_can_network_connect
+      seboolean: 
+        name: httpd_can_network_connect
+        state: true
+        persistent: true

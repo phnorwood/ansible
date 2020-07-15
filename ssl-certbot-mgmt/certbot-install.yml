@@ -1,0 +1,14 @@
+---
+- name: install certbot ssl requirements
+  hosts: "{{ target_host }}"
+  become: true
+  vars_files: vars/certbot-config.yml
+  tasks:
+    - name: create /opt/certbot
+      file: 
+        path: "{{ certbot_path }}"
+        state: directory
+    - name: git clone certbot
+      git: 
+        repo: "{{ certbot_git_repo }"
+        dest: "{{ certbot_path }}"
