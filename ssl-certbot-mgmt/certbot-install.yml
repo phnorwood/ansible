@@ -10,5 +10,5 @@
         state: directory
     - name: git clone certbot
       git: 
-        repo: "{{ certbot_git_repo }"
+        repo: "{{ certbot_git_repo }}"
         dest: "{{ certbot_path }}"
