@@ -1,6 +1,6 @@
 ---
 # vars file for dns-management
-# dns_packages:
+dns_packages:
 - bind
 - bind-utils
 dns_service: named
