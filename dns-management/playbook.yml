@@ -1,0 +1,6 @@
+---
+- name: install + configure dns (bind)
+  hosts: "{{ target_host }}"
+  become: true
+  roles: 
+    - dns-management
