@@ -17,4 +17,4 @@
         repo: "{{ certbot_git_repo }}"
         dest: "{{ certbot_path }}"
     - debug:
-        var: "{{ certbot_letsencrypt }}"
+        var: "Execute command '{{ certbot_letsencrypt }}' on {{ target_host }} to complete."
