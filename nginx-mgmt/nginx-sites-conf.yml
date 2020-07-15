@@ -15,3 +15,8 @@
       service:
         name: "{{ nginx_service }}"
         state: restarted
+    - name: set http_can_network_connect
+      seboolean: 
+        name: httpd_can_network_connect
+        state: true
+        peristent: true
