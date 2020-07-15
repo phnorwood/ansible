@@ -4,6 +4,10 @@
   become: true
   vars_files: vars/certbot-config.yml
   tasks:
+    - name: install git
+      yum: 
+        name: git
+        state: latest
     - name: create /opt/certbot
       file: 
         path: "{{ certbot_path }}"
