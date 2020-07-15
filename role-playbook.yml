@@ -1,6 +1,0 @@
----
-- name: "execute {{ target_role }}"
-  hosts: "{{ target_host }}"
-  become: "{{ become }}"
-  roles: 
-    - "{{ target_role }}"
