@@ -1,9 +1,9 @@
 ---
 - name: install rhel system roles
-  hosts: "{{ target_hosts }}"
+  hosts: "{{ target_host }}"
   become: true
   tasks: 
     - name: install rhel system roles
       yum: 
         name: rhel-system-roles
-        state: installed
+        state: latest

@@ -1,0 +1,5 @@
+---
+- name: role-template
+  hosts: "{{ target_host }}"
+  roles: 
+    - role-template
