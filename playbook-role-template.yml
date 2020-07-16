@@ -1,6 +1,5 @@
 ---
-- name: "{{ target_role }}"
+- name: role
   hosts: "{{ target_host }}"
-  become: "{{ become }}"
   roles: 
-    - "{{ target_role }}"
+    - role
