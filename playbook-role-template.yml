@@ -1,5 +1,0 @@
----
-- name: role
-  hosts: "{{ target_host }}"
-  roles: 
-    - role
