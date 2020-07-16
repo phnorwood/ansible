@@ -1,9 +1,0 @@
----
-nginx_packages:
-- nginx
-nginx_service: nginx
-nginx_firewall_services:
-- http
-- https
-nginx_confd_files:
-- ansible-bogwood-org.conf
