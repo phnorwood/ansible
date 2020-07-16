@@ -1,8 +1,0 @@
----
-- name: dns-management
-  hosts: "{{ target_host }}"
-  host_key_checking: false
-  remote_user: root
-  ask_pass: true
-  roles: 
-    - remote-authorization
