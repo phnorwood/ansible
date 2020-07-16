@@ -1,5 +1,6 @@
 ---
 # tasks file for remote-authorization
+- include_vars: remote-auth-vault.yml
 - name: create remote user 
   user: 
     name: "{{ ansible_user_name }}"
