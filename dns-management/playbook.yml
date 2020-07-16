@@ -1,6 +1,5 @@
 ---
 - name: dns-management
   hosts: "{{ target_host }}"
-  become: true
   roles: 
     - dns-management
