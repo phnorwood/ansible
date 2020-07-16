@@ -1,0 +1,5 @@
+---
+- name: nginx-management
+  hosts: "{{ target_host }}"
+  roles: 
+    - nginx-management
