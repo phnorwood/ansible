@@ -1,0 +1,35 @@
+---
+# tasks file for nginx-management
+- name: install nginx
+  yum: 
+    name: "{{ nginx_packages }}"
+    state: latest
+- name: configure firewall
+  firewalld: 
+    service: "{{ item }}"
+    state: enabled
+    permanent: true
+    zone: public
+  notify: restart_firewalld
+  loop: "{{ nginx_firewall_services }}"
+- name: enable nginx
+  service: 
+    name: "{{ nginx_service }}"
+    enabled: true
+    state: started
+- name: configure nginx.conf
+  template:
+    src: "vars/nginx.conf.j2"
+    dest: "/etc/nginx/nginx.conf"
+    owner: root
+    group: root
+    mode: '0644'
+- name: restart nginx
+  service:
+    name: "{{ nginx_service }}"
+    state: restarted
+- name: set http_can_network_connect
+  seboolean: 
+    name: httpd_can_network_connect
+    state: true
+    persistent: true

@@ -1,0 +1,8 @@
+---
+# vars file for nginx-management
+nginx_packages:
+- nginx
+nginx_service: nginx
+nginx_firewall_services:
+- http
+- https
