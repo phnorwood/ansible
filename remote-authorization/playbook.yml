@@ -1,7 +1,5 @@
 ---
 - name: remote-authorization
   hosts: "{{ target_host }}"
-  remote_user: root
-  ask_pass: true
   roles: 
     - remote-authorization
