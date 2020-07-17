@@ -1,3 +1,21 @@
 # Ansible
 
 This is a collection of Ansible playbooks and roles for general use.
+
+Written for both entry- and professional-level users. Use cases are separated by directory, with most capable of being run in either a playbook or role construction.
+
+## Requirements
+
+Ansible is a pre-requisite for this project.
+
+    $ sudo yum install ansible
+
+Executed Ansible playbooks must be capable of making changes to the target hosts for success. If not yet configured, this project provides the [**remote-authorization**](https://github.com/phnorwood/ansible/tree/master/remote-authorization) role to configure Ansible remote access on target servers.
+
+## Using Repository
+
+ Download or clone repository to preferred Ansible host.
+
+```
+$ git clone git@github.com:phnorwood/ansible.git
+```
