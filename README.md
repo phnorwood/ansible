@@ -28,5 +28,4 @@ The variable '*target_host*' is used throughout this project to represent the ho
 - name: playbook.yml
   hosts: "{{ target_host }}"
   ...
-
 ```
