@@ -1,7 +1,7 @@
 CERTBOT SSL Management
 =========
 
-Install [https://certbot.eff.org/](CERTBOT) on target host for the purpose of generating wildcard SSL cert (*.mydomain.com).
+Install [CERTBOT](https://certbot.eff.org/) on target host for the purpose of generating wildcard SSL cert (*.mydomain.com).
 
 End result is a target host configured with CERTBOT, including explicit instructions (command) to generate custom SSL certificates for the target domain.
 
@@ -68,7 +68,7 @@ certbot_git_repo: *https://github.com/certbot/certbot.git*
 
 **Variables available in vars/main.yml**  
 
-*// dns challenge method for certbot [https://certbot.eff.org/docs/challenges.html](alternatives available)*  
+*// [challenge method](https://certbot.eff.org/docs/challenges.html) for certbot*
 certbot_challenge: *dns* 
 
 *// email*  
