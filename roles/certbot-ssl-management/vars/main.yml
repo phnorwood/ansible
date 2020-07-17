@@ -1,7 +1,5 @@
 ---
 # vars file for certbot-ssl-management
-certbot_path: /opt/certbot
-certbot_git_repo: https://github.com/certbot/certbot.git
 certbot_challenge: dns
 certbot_email: myemail@email.com
 certbot_domain: mydomain.com

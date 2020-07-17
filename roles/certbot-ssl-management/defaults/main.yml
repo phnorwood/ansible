@@ -1,0 +1,4 @@
+---
+# defaults file for certbot-ssl-management
+certbot_path: /opt/certbot
+certbot_git_repo: https://github.com/certbot/certbot.git
