@@ -2,7 +2,7 @@
 
 This is a collection of Ansible playbooks and roles for general use.
 
-Written for both entry- and professional-level users. Use cases are separated by directory, with most capable of being run in either a playbook or role construction.
+Written for both entry- and professional-level users. Use cases are separated by directory.
 
 ## Requirements
 
