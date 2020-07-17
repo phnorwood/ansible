@@ -58,14 +58,15 @@ IMPORTANT NOTES:
 Role Variables
 --------------
 
-**Variables available in defaults/main.yml**
+**Variables available in defaults/main.yml**  
+
 *// install path for certbot*  
 certbot_path: */opt/certbot* 
 
 *// certbot github repo*  
 certbot_git_repo: *https://github.com/certbot/certbot.git* 
 
-**Variables available in vars/main.yml** 
+**Variables available in vars/main.yml**  
 
 *// dns challenge method for certbot ([https://certbot.eff.org/docs/challenges.html](alternatives available))*  
 certbot_challenge: *dns* 
