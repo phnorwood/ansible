@@ -22,7 +22,7 @@ $ git clone git@github.com:phnorwood/ansible.git
 
 ## Variables
 
-The variable '*target_host*' is used throughout this project to represent the host(s) against which these playbooks and roles will execute. It must be set for successful execution, and will serve the '*hosts:*' parameter.
+The variable '*target_host*' is used throughout this project to represent the host(s) against which these playbooks and roles will execute. It must be set for successful execution and will serve the '*hosts:*' parameter.
 
 e.g.
 
