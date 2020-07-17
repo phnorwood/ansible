@@ -5,7 +5,7 @@ Install and configure DNS (BIND) server for immediate use, excluding DNS records
 
 Role Variables
 --------------
-**Variables available in [defaults/main.yml]**
+**[defaults/main.yml]**  
 dns_packages:  
 - bind  
 - bind-utils  
@@ -13,7 +13,7 @@ dns_service: named
 dns_firewall_services:  
 - dns  
 
-**Variables available in [vars/main.yml]**
+**Variables available in [vars/main.yml]**  
 dns_suffix: mydomain.com  
 dns_ipv4_interface: 10.0.0.5  
 dns_reverse_octet: 5  
