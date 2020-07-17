@@ -1,4 +1,4 @@
-Role Name
+NGINX Management
 =========
 
 Install and configure NGINX proxy server for immediate use, excluding specific proxy records.  
