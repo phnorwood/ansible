@@ -1,0 +1,8 @@
+---
+# defaults file for dns-management
+dns_packages:
+- bind
+- bind-utils
+dns_service: named
+dns_firewall_services:
+- dns
