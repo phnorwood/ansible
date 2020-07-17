@@ -70,7 +70,7 @@ certbot_git_repo: https://github.com/certbot/certbot.git
 **[vars/main.yml]**  
 
 ```
-# [challenge method](https://certbot.eff.org/docs/challenges.html) for certbot
+# challenge method for certbot
 certbot_challenge: dns
 # email
 certbot_email: myemail@email.com
