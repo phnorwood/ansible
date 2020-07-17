@@ -1,9 +1,11 @@
 CERTBOT SSL Management
 =========
 
-Install CERTBOT on target host.
+Install [CERTBOT](https://certbot.eff.org/) on target host for the purpose of generating wildcard SSL cert (*.mydomain.com).
 
-End result is a target host configured with CERBOT, including explicit instructions (command) to generate custom SSL certificates for the target domain.
+End result is a target host configured with CERTBOT, including explicit instructions (command) to generate custom SSL certificates for the target domain.
+
+The following is an example execution of the role output.
 
 e.g.
 
@@ -56,21 +58,27 @@ IMPORTANT NOTES:
 Role Variables
 --------------
 
-Variables available in **defaults/main.yml**
+**Variables available in defaults/main.yml**  
 
-certbot_path: */opt/certbot*
+*// install path for certbot*  
+certbot_path: */opt/certbot* 
 
-certbot_git_repo: *https://github.com/certbot/certbot.git*
+*// certbot github repo*  
+certbot_git_repo: *https://github.com/certbot/certbot.git* 
 
-Variables available in **vars/main.yml** 
+**Variables available in vars/main.yml**  
 
-certbot_challenge: *dns*
+*// [challenge method](https://certbot.eff.org/docs/challenges.html) for certbot*  
+certbot_challenge: *dns* 
 
-certbot_email: *myemail@email.com*
+*// email*  
+certbot_email: *myemail@email.com* 
 
-certbot_domain: *mydomain.com*
+*// domain*  
+certbot_domain: *mydomain.com* 
 
-certbot_letsencrypt: *"{{ certbot_path }}/letsencrypt-auto certonly --manual --email {{ certbot_email }} --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.{{ certbot_domain }} --preferred-challenges={{ certbot_challenge }}"*
+*// formatted output commaned (to be executed at role completion)*  
+certbot_letsencrypt: *"{{ certbot_path }}/letsencrypt-auto certonly --manual --email {{ certbot_email }} --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.{{ certbot_domain }} --preferred-challenges={{ certbot_challenge }}"* 
 
 Example Playbook
 ----------------
