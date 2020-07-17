@@ -58,27 +58,27 @@ IMPORTANT NOTES:
 Role Variables
 --------------
 
-**Variables available in defaults/main.yml**  
+**[defaults/main.yml]**  
 
-*// install path for certbot*  
-certbot_path: */opt/certbot* 
+```
+# install path for certbot
+certbot_path: /opt/certbot
+# certbot github repo
+certbot_git_repo: https://github.com/certbot/certbot.git
+```
 
-*// certbot github repo*  
-certbot_git_repo: *https://github.com/certbot/certbot.git* 
+**[vars/main.yml]**  
 
-**Variables available in vars/main.yml**  
-
-*// [challenge method](https://certbot.eff.org/docs/challenges.html) for certbot*  
-certbot_challenge: *dns* 
-
-*// email*  
-certbot_email: *myemail@email.com* 
-
-*// domain*  
-certbot_domain: *mydomain.com* 
-
-*// formatted output commaned (to be executed at role completion)*  
-certbot_letsencrypt: *"{{ certbot_path }}/letsencrypt-auto certonly --manual --email {{ certbot_email }} --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.{{ certbot_domain }} --preferred-challenges={{ certbot_challenge }}"* 
+```
+# [challenge method](https://certbot.eff.org/docs/challenges.html) for certbot
+certbot_challenge: dns
+# email
+certbot_email: myemail@email.com
+# domain
+certbot_domain: mydomain.com
+# formatted output commaned (to be executed at role completion)
+certbot_letsencrypt: "{{ certbot_path }}/letsencrypt-auto certonly --manual --email {{ certbot_email }} --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.{{ certbot_domain }} --preferred-challenges={{ certbot_challenge }}"
+```
 
 Example Playbook
 ----------------
