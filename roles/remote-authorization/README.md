@@ -1,38 +1,38 @@
-Role Name
+Remote Authorization
 =========
 
-A brief description of the role goes here.
+Create remote user on target host, including administrator (group: wheel) privileges and SSH public key copy.
 
-Requirements
-------------
+This role was created to solve the problem of first-use Ansible (e.g. how to execute Ansible from scratch if nothing yet exists on remote hosts) but can be expanded as required.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Role requires executing as **root** (or similar privileged user).
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+**vars/remote-auth-vault.yml**
+```
+# username to create
+ansible_user_name: myuser
+# password
+ansible_user_password: mypassword
+# ssh public key to copy to user profile
+ansible_public_key: ssh-rsa AJHDB3NzaC1yc2EAAAADAQABAAABgQCbT4cXBgftnbSApFD5G60HsCq/hkogDI8vG6YgdunwPeBITHCu+wbgwxUZxl713LI8a6gQdgMsZPtuTZpqQUsqmUDfVXmziZ0ouz7atRyzN9FlwwrmUeo0bKQGcYBO7ObSoKSNBH+ZM1PV1XgflogsBQlgea7hvdrsx6CGop8LHU/1urKquhY+kdHNIAUwX+HxdmhsfVhsCKTjHTUmxSKuBZdZfN3CP/3EFn5hwVqohaLq8KINmV5nJHt3TfmB3NQTmMLkeZO9TSNUymC2dUart+qke5Ryu1n7MzUNwLe9lWFrMUxUCC+8w7kYfWYzl99CkXhYKlzqT45V+TgJT7mVTh5FR2bmxj/Nxfib7ViKVJq5uIKd0GXaLPfXSzkvbnb+RF9hKBrYQi0FlgeOyLNsx5aHfPGLaIU569kXd7gw23YNEll84yjyKggHfZreNECBPg4cqrWojcUesM7ltgoSWzZwONZmol0DA4ocfKrPavSB6CJAPGmC6RBRlBPRhPM= myuser@myansiblehost
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Some considerations need to be taken when implenenting this role.
+
+1. Requires **root** privilege credentials
+1. Variable file **vars/remote-auth-vault.yml** should be encrypted once populated (using [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html))
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: target_host
       roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+         - remote-authorization
