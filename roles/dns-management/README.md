@@ -1,17 +1,28 @@
-Role Name
+DNS Management
 =========
 
-A brief description of the role goes here.
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Install and configure DNS (BIND) server for immediate use, excluding DNS records.
 
 Role Variables
 --------------
+**Variables available in [defaults/main.yml]**
+dns_packages:  
+- bind  
+- bind-utils  
+dns_service: named  
+dns_firewall_services:  
+- dns  
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+**Variables available in [vars/main.yml]**
+dns_suffix: mydomain.com  
+dns_ipv4_interface: 10.0.0.5  
+dns_reverse_octet: 5  
+dns_cidr: 10.0.0.0/24  
+dns_forward_zone: "{{ dns_suffix }}"  
+dns_forward_zone_file: "forward.{{ dns_suffix }}"  
+dns_reverse_zone: "0.0.10.in-addr.arpa"  
+dns_reverse_zone_file: "reverse.{{ dns_suffix }}"  
+dns_hostname: mydnshostname  
 
 Dependencies
 ------------
@@ -20,19 +31,8 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+```
+- hosts: target_host
+  roles:
+     - dns-management
+```
