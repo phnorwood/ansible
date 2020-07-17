@@ -5,7 +5,7 @@ Install and configure DNS (BIND) server for immediate use, excluding DNS records
 
 Role Variables
 --------------
-**[defaults/main.yml]**  
+**defaults/main.yml**  
 
 ```
 dns_packages:
@@ -16,7 +16,7 @@ dns_firewall_services:
 - dns
 ```
 
-**[vars/main.yml]**  
+**vars/main.yml**  
 
 ```
 # domain name
