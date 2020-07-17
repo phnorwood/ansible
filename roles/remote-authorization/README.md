@@ -26,7 +26,7 @@ Dependencies
 Some considerations need to be taken when implenenting this role.
 
 1. Requires **root** privilege credentials
-1. Variable file **vars/remote-auth-vault.yml** should be encrypted once populated (using [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html))
+1. Variable file **vars/remote-auth-vault.yml** should be encrypted once populated (using [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)) to secure confidential information.
 
 Example Playbook
 ----------------
