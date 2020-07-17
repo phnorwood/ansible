@@ -58,7 +58,7 @@ IMPORTANT NOTES:
 Role Variables
 --------------
 
-**[defaults/main.yml]**  
+**defaults/main.yml**  
 
 ```
 # install path for certbot
@@ -67,7 +67,7 @@ certbot_path: /opt/certbot
 certbot_git_repo: https://github.com/certbot/certbot.git
 ```
 
-**[vars/main.yml]**  
+**vars/main.yml**  
 
 ```
 # challenge method for certbot
