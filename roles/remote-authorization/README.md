@@ -12,7 +12,7 @@ Role Variables
 
 **vars/remote-auth-vault.yml**
 ```
-# username to create
+# username
 ansible_user_name: myuser
 # password
 ansible_user_password: mypassword
