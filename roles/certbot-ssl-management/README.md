@@ -68,7 +68,7 @@ certbot_git_repo: *https://github.com/certbot/certbot.git*
 
 **Variables available in vars/main.yml**  
 
-*// dns challenge method for certbot ([https://certbot.eff.org/docs/challenges.html](alternatives available))*  
+*// dns challenge method for certbot [https://certbot.eff.org/docs/challenges.html](alternatives available)*  
 certbot_challenge: *dns* 
 
 *// email*  
