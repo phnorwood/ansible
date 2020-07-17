@@ -1,6 +1,0 @@
----
-- name: nginx-management
-  hosts: "{{ target_host }}"
-  become: true
-  roles: 
-    - nginx-management

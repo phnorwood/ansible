@@ -1,6 +1,0 @@
----
-- name: cerbot-ssl-management
-  hosts: "{{ target_host }}"
-  become: true
-  roles: 
-    - certbot-ssl-management

@@ -1,5 +1,0 @@
----
-- name: remote-authorization
-  hosts: "{{ target_host }}"
-  roles: 
-    - remote-authorization

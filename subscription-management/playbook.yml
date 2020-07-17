@@ -1,6 +1,0 @@
----
-- name: subscription-management
-  hosts: "{{ target_host }}"
-  become: true
-  roles: 
-    - subscription-management
