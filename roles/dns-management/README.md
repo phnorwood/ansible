@@ -1,7 +1,7 @@
 DNS Management
 =========
 
-Install and configure DNS ([https://www.isc.org/bind/](BIND)) server for immediate use, including limited DNS records for server.  
+Install and configure DNS ([BIND](https://www.isc.org/bind/)) server for immediate use, including limited DNS records for server.  
 
 Additional DNS records can then be added to the deployed server using appropriate configuration files.
 
