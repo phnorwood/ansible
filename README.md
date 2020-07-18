@@ -10,7 +10,7 @@ Ansible is a pre-requisite for this project.
 
     $ sudo yum install ansible
 
-Executed Ansible playbooks must be capable of making changes to the target hosts for success. If not yet configured, this project provides the [**remote-authorization**](https://github.com/phnorwood/ansible/tree/master/remote-authorization) role to configure Ansible remote access on target hosts.
+Executed Ansible playbooks must be capable of making changes to the target hosts for success. If not yet configured, this project provides the [**remote-authorization**](https://github.com/phnorwood/ansible/tree/master/roles/remote-authorization) role to configure Ansible remote access on target hosts.
 
 ## Using Repository
 
