@@ -3,7 +3,7 @@ CERTBOT SSL Management
 
 Install [CERTBOT](https://certbot.eff.org/) on target host for the purpose of generating wildcard SSL certificate (e.g. *.mydomain.com).
 
-End result is a target host configured with CERTBOT, including explicit instructions (command) to generate custom SSL certificates for the target domain.
+End result is a target host configured with CERTBOT, including explicit output command to generate custom SSL certificates for the target domain.
 
 The following is an example execution of the role output.
 
