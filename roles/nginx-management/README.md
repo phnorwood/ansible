@@ -1,7 +1,7 @@
 NGINX Management
 =========
 
-Install and configure NGINX proxy server for immediate use, excluding specific proxy records.  
+Install and configure [NGINX](https://www.nginx.com/) proxy server for immediate use, excluding specific proxy records.  
 
 Subsequent proxy behaviors can be added to /etc/nginx/nginx.conf or /etc/nginx/conf.d/ as required.
 
