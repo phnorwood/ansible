@@ -16,6 +16,12 @@ rhn_user_name: myuser
 rhn_user_password: mypassword
 ```
 
+Dependencies
+----------------
+Some considerations need to be taken when implenenting this role.
+
+1. Variable file vars/rhn-info.yml should be encrypted once populated (using ansible-vault) to secure confidential information.
+
 Example Playbook
 ----------------
 
