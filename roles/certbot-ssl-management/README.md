@@ -5,7 +5,7 @@ Install [CERTBOT](https://certbot.eff.org/) on target host for the purpose of ge
 
 End result is a target host configured with CERTBOT, including explicit output command to generate custom SSL certificates for the target domain.
 
-The following is an example execution of the role output.
+The following is an example execution of the role output -- that is, the final output of this role then being used to complete the SSL wildcard configuration.
 
 e.g.
 
