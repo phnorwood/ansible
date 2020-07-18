@@ -25,7 +25,7 @@ Dependencies
 
 Some considerations need to be taken when implenenting this role.
 
-1. Requires **root** privilege credentials
+1. Requires **root** privilege credentials, including ignoring [host key checking](https://docs.ansible.com/ansible/latest/user_guide/connection_details.html#host-key-checking) on initial connection.
 1. Variable file **vars/remote-auth-vault.yml** should be encrypted once populated (using [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)) to secure confidential information.
 
 Example Playbook
