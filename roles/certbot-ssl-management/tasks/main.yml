@@ -4,7 +4,7 @@
   yum: 
     name: git
     state: latest
-- name: create /opt/certbot
+- name: validate "{{ certbot_path }}"
   file: 
     path: "{{ certbot_path }}"
     state: directory
