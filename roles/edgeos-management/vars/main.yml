@@ -1,0 +1,3 @@
+---
+# vars file for edgeos-management
+target_interface: vtun0

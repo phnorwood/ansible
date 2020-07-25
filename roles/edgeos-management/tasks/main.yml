@@ -1,0 +1,18 @@
+---
+# tasks file for edgeos-management
+- name: "disable interface {{ target_interface }}"
+  edgeos_config: 
+    lines: 
+      - set interfaces openvpn "{{ target_interface }}"  disable
+- name: "enable interface {{ target_interface }}"
+  edgeos_config:
+    lines:
+      - delete interfaces openvpn "{{ target_interface }}" disable
+- pause: 
+    seconds: 10
+- name: show interfaces
+  edgeos_command: 
+    commands: show interfaces
+  register: result
+- debug: 
+    var: result.stdout_lines
