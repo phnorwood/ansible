@@ -3,11 +3,11 @@
 - name: "disable interface {{ target_interface }}"
   edgeos_config: 
     lines: 
-      - set interfaces openvpn "{{ target_interface }}"  disable
+      - set interfaces openvpn vtun0 disable
 - name: "enable interface {{ target_interface }}"
   edgeos_config:
     lines:
-      - delete interfaces openvpn "{{ target_interface }}" disable
+      - delete interfaces openvpn vtun0 disable
 - pause: 
     seconds: 10
 - name: show interfaces
