@@ -1,13 +1,13 @@
 ---
 # tasks file for edgeos-management
-- name: "disable interface {{ target_interface }}"
+- name: "disable openvpn interface {{ target_interface }}"
   edgeos_config: 
     lines: 
-      - set interfaces openvpn vtun0 disable
-- name: "enable interface {{ target_interface }}"
+      - "set interfaces openvpn {{ target_interface }} disable"
+- name: "enable openvpn interface {{ target_interface }}"
   edgeos_config:
     lines:
-      - delete interfaces openvpn vtun0 disable
+      - "delete interfaces openvpn {{ target_interface }} disable"
 - pause: 
     seconds: 10
 - name: show interfaces
